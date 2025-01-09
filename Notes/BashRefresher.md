@@ -13,18 +13,24 @@ We can obviously pass grep via pipe
 # sed overview
 
 sed =  stream editor
+
 most commonly used for find and replace stuff within files
+
 Example:
     sed 's/bash/zsh/g' file.txt
+
         -> s =  substitute
         -> bash = original
         -> zsh = target
         -> g = globally
         -> file.txt = the file in which this needs to be done
-**The above command will substitute 'bash' with 'zsh' globally (all instances) in file.txt file. **
+        
 
--> *But this doesn't modify the original flag. To modify the original flag, we need to use ''-i' flag. *
--> *Instead of 'g' if we use '1', then it'll replace the original with target wherever it is occuring for the first time in each row/line *
+_The above command will substitute 'bash' with 'zsh' globally (all instances) in file.txt file._
+
+-> **But this doesn't modify the original flag. To modify the original flag, we need to use '-i' flag.**
+
+-> _Instead of 'g' if we use '1', then it'll replace the original with target wherever it is occuring for the first time in each row/line_
 
 # awk overview
 
@@ -35,7 +41,9 @@ dummy.txt :-
 ------------
 
 Name        LastName        Email
+
 abc         zz              abc@gmail.com
+
 pqr         yy              pqr@gmail.com
 
 EOF
@@ -47,7 +55,9 @@ dummy.txt :-
 ------------
 
 Name:LastName:Email
+
 abc:zz:abc@gmail.com
+
 pqr:yy:pqr@gmail.com
 
 EOF
@@ -55,5 +65,6 @@ EOF
 Now everything is seperated by ':' instead of space like before
 
 -> awk -F: '{print $1,$2}'  => prints Name and LastName column (space seperated)
-    ** We are specifing ':' as delimiter using '-F' flag **
+
+    _We are specifing ':' as delimiter using '-F' flag_
 
